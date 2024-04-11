@@ -18,8 +18,8 @@ mongoose.connect(MONGO_DB,
     .catch(err => console.error('MongoDB connection error:', err));
 
 const app= express();
-app.use(morgan('dev'));
-app.use(express.json());
+app.use(morgan('dev')); //intercept all incoming request and (log uri and response status) - morgan middleware
+app.use(express.json()); //request body parser middleware
 
 app.use("/api/fruits",FruitRoutes);
 

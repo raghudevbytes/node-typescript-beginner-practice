@@ -12,7 +12,7 @@ fruitRouter.post("/",(req, res)=>{
     }
     else if(typeof req.body === 'object')
         FruitsController.createFruitData(req, res).then(r => console.log(`object res : ${res}`));
-});
+}); // handled single object and multiple object save
 fruitRouter.put("/:id",FruitsController.updateFruitsData);
 fruitRouter.delete("/:id",FruitsController.deleteFruitsData);
 
